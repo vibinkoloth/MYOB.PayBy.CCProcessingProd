@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\PayByCust\MAPayBy\Bin\MYOB.PayBy.CCProcessing.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA7127A7-7818-4C28-B2A6-24BC5EC2FBA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MYOB.PayBy.CCProcessing</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MYOB.PayBy.CCProcessing</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\phoenix\phoenix\Bin\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PX.CCProcessingBase">
+      <HintPath>..\..\..\phoenix\phoenix\Bin\PX.CCProcessingBase.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Common">
+      <HintPath>..\..\..\phoenix\phoenix\Bin\PX.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Data">
+      <HintPath>..\..\..\phoenix\phoenix\Bin\PX.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PX.Objects">
+      <HintPath>..\..\..\phoenix\phoenix\Bin\PX.Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="paycorp-client-csharp(v1.5.0)">
+      <HintPath>lib\paycorp-client-csharp(v1.5.0).dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCProcTranExt.cs" />
+    <Compile Include="CustomerPaymentMethodExt.cs" />
+    <Compile Include="ARRegisterExt.cs" />
+    <Compile Include="ARPaymentExt.cs" />
+    <Compile Include="V2\PayByValidatorV2.cs" />
+    <Compile Include="V2\PayByDirectDebitProcessingPlugin.cs" />
+    <Compile Include="V2\PayByProcessingPluginV2.cs" />
+    <Compile Include="V2\PayByPaymentProfileProcessor.cs" />
+    <Compile Include="V2\PayByTranStatusGetterV2.cs" />
+    <Compile Include="V2\PayByBatchProcessorV2.cs" />
+    <Compile Include="V2\PayByCompleteFormProcessorV2.cs" />
+    <Compile Include="V2\PayByHostedFormHelperV2.cs" />
+    <Compile Include="V2\PayByDDTransactionProcessorV2.cs" />
+    <Compile Include="V2\PayByReportProcessorV2.cs" />
+    <Compile Include="V2\TransactionGetterV2.cs" />
+    <Compile Include="V2\ProfileCreatorV2.cs" />
+    <Compile Include="V2\PayByHostedPaymentFormProcessorV2.cs" />
+    <Compile Include="V2\PayByHostedFormProcessorV2.cs" />
+    <Compile Include="V2\PayByProfileProcessorV2.cs" />
+    <Compile Include="V2\PayByTransactionProcessorV2.cs" />
+    <Compile Include="V2\PayByProcessorV2.cs" />
+    <Compile Include="V2\PayByAuthenticateTestProcessor.cs" />
+    <Compile Include="PAYBY\PaybyGatewayExt\ProfileServer.cs" />
+    <Compile Include="PAYBY\Helpers\CertificateHolder.cs" />
+    <Compile Include="PAYBY\DI\ServiceRegistration.cs" />
+    <Compile Include="PAYBY\DI\MACreditCardData.cs" />
+    <Compile Include="PAYBY\DI\IMACreditCardData.cs" />
+    <Compile Include="Common\DDResponseFilter.cs" />
+    <Compile Include="Common\PBSOOrderEntryExt.cs" />
+    <Compile Include="Common\IApiOperation`2.cs" />
+    <Compile Include="Common\EnvironmentV2.cs" />
+    <Compile Include="Common\PBDirectEntryProcessing.cs" />
+    <Compile Include="Common\PBARPaymentEntryExt.cs" />
+    <Compile Include="Common\PBProcessingCenterMaintExt.cs" />
+    <Compile Include="Common\PBCustomerPaymentMethodMaintExt.cs" />
+    <Compile Include="Common\operationEnum.cs" />
+    <Compile Include="Common\transactionTypeEnum.cs" />
+    <Compile Include="Common\soapTypeEnum.cs" />
+    <Compile Include="Common\messageTypeEnum.cs" />
+    <Compile Include="Common\validationModeEnum.cs" />
+    <Compile Include="Common\EnvironmentMode.cs" />
+    <Compile Include="Common\ConstantCommon.cs" />
+    <Compile Include="Common\ApiOperationBase`2.cs" />
+    <Compile Include="Common\PayByHttpUtility.cs" />
+    <Compile Include="Common\SettingsKeys.cs" />
+    <Compile Include="Common\PayBySoapUtility.cs" />
+    <Compile Include="Common\PayByHttpRequest.cs" />
+    <Compile Include="Common\PayByClientConfig.cs" />
+    <Compile Include="Common\PayByRealtimePaymentRequest.cs" />
+    <Compile Include="Common\PayByBatchRequest.cs" />
+    <Compile Include="Common\PayBySoapRequest.cs" />
+    <Compile Include="Common\PaybyHttpResponse.cs" />
+    <Compile Include="Common\PayByTransactionResponse.cs" />
+    <Compile Include="Common\InitResponse.cs" />
+    <Compile Include="Common\PayByResponse.cs" />
+    <Compile Include="Common\PayByResponseObj.cs" />
+    <Compile Include="Common\createBatchController.cs" />
+    <Compile Include="Common\createInitController.cs" />
+    <Compile Include="Common\createTransactionController.cs" />
+    <Compile Include="Common\PayByPluginHelper.cs" />
+    <Compile Include="PX\CCProcessing\V2\ICCPaymentProfileProcessor.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
