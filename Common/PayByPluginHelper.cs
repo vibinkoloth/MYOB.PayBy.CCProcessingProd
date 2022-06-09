@@ -149,35 +149,46 @@ namespace MYOB.PayBy.CCProcessing.Common
 
     internal static string GetResponseError(PaybyHttpResponse response)
     {
-      if (response == null || response.Message == null)
-        return "The response is empty.";
-      if (response.IsSuccess)
-        return string.Empty;
-      // ISSUE: reference to a compiler-generated field
-      if (PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1 = CallSite<Func<CallSite, object, string>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (string), typeof (PayByPluginHelper)));
-      }
-      // ISSUE: reference to a compiler-generated field
-      Func<CallSite, object, string> target = PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1.Target;
-      // ISSUE: reference to a compiler-generated field
-      CallSite<Func<CallSite, object, string>> p1 = PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1;
-      // ISSUE: reference to a compiler-generated field
-      if (PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0 = CallSite<Func<CallSite, System.Type, object, object>>.Create(Binder.InvokeMember(CSharpBinderFlags.None, "BuildMessagesString", (IEnumerable<System.Type>) null, typeof (PayByPluginHelper), (IEnumerable<CSharpArgumentInfo>) new CSharpArgumentInfo[2]
-        {
-          CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.UseCompileTimeType | CSharpArgumentInfoFlags.IsStaticType, (string) null),
-          CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.None, (string) null)
-        }));
-      }
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      object obj = PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0.Target((CallSite) PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0, typeof (PayByPluginHelper), response.Response);
-      return target((CallSite) p1, obj);
-    }
+            /* if (response == null || response.Message == null)
+               return "The response is empty.";
+             if (response.IsSuccess)
+               return string.Empty;
+             // ISSUE: reference to a compiler-generated field
+             if (PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1 == null)
+             {
+               // ISSUE: reference to a compiler-generated field
+               PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1 = CallSite<Func<CallSite, object, string>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (string), typeof (PayByPluginHelper)));
+             }
+             // ISSUE: reference to a compiler-generated field
+             Func<CallSite, object, string> target = PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1.Target;
+             // ISSUE: reference to a compiler-generated field
+             CallSite<Func<CallSite, object, string>> p1 = PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__1;
+             // ISSUE: reference to a compiler-generated field
+             if (PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0 == null)
+             {
+               // ISSUE: reference to a compiler-generated field
+               PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0 = CallSite<Func<CallSite, System.Type, object, object>>.Create(Binder.InvokeMember(CSharpBinderFlags.None, "BuildMessagesString", (IEnumerable<System.Type>) null, typeof (PayByPluginHelper), (IEnumerable<CSharpArgumentInfo>) new CSharpArgumentInfo[2]
+               {
+                 CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.UseCompileTimeType | CSharpArgumentInfoFlags.IsStaticType, (string) null),
+                 CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.None, (string) null)
+               }));
+             }
+             // ISSUE: reference to a compiler-generated field
+             // ISSUE: reference to a compiler-generated field
+             object obj = PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0.Target((CallSite) PayByPluginHelper.\u003C\u003Eo__8.\u003C\u003Ep__0, typeof (PayByPluginHelper), response.Response);
+             return target((CallSite) p1, obj);*/
+            if (response?.Message == null)
+            {
+                return "The response is empty.";
+            }
+
+            if (response.IsSuccess)
+            {
+                return string.Empty;
+            }
+
+            return PayByPluginHelper.BuildMessagesString(response.Response.ToString());
+        }
 
     internal static string BuildMessagesString(string responseMessages)
     {
@@ -234,7 +245,7 @@ namespace MYOB.PayBy.CCProcessing.Common
       PaybyHttpResponse response)
     {
       PX.CCProcessingBase.Interfaces.V2.ProcessingResult processingResult = new PX.CCProcessingBase.Interfaces.V2.ProcessingResult();
-      if (!response.IsSuccess)
+     /* if (!response.IsSuccess)
         return (PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null;
       // ISSUE: reference to a compiler-generated field
       if (PayByPluginHelper.\u003C\u003Eo__13.\u003C\u003Ep__0 == null)
@@ -248,67 +259,116 @@ namespace MYOB.PayBy.CCProcessing.Common
       processingResult.AuthorizationNbr = realTimeResponse.authCode;
       processingResult.ResponseCode = realTimeResponse.responseCode;
       processingResult.ResponseReasonText = realTimeResponse.responseText;
-      processingResult.TransactionNumber = realTimeResponse.txnReference;
+      processingResult.TransactionNumber = realTimeResponse.txnReference;*/
       return processingResult;
     }
 
     public static PX.CCProcessingBase.Interfaces.V2.ProcessingResult ProcessBatchResponseV2(
       PaybyHttpResponse response)
     {
-      PX.CCProcessingBase.Interfaces.V2.ProcessingResult processingResult = new PX.CCProcessingBase.Interfaces.V2.ProcessingResult();
-      if (!response.IsSuccess)
-        return (PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null;
-      // ISSUE: reference to a compiler-generated field
-      if (PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PayByResponseObj>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PayByResponseObj), typeof (PayByPluginHelper)));
-      }
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      PayByResponseObj payByResponseObj = PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0.Target((CallSite) PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0, response.Response);
-      processingResult.TransactionNumber = payByResponseObj.getResponseValue("GroupId");
-      return processingResult;
-    }
+            /*PX.CCProcessingBase.Interfaces.V2.ProcessingResult processingResult = new PX.CCProcessingBase.Interfaces.V2.ProcessingResult();
+            if (!response.IsSuccess)
+              return (PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null;
+            // ISSUE: reference to a compiler-generated field
+            if (PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0 == null)
+            {
+              // ISSUE: reference to a compiler-generated field
+              PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PayByResponseObj>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PayByResponseObj), typeof (PayByPluginHelper)));
+            }
+            // ISSUE: reference to a compiler-generated field
+            // ISSUE: reference to a compiler-generated field
+            PayByResponseObj payByResponseObj = PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0.Target((CallSite) PayByPluginHelper.\u003C\u003Eo__14.\u003C\u003Ep__0, response.Response);
+            processingResult.TransactionNumber = payByResponseObj.getResponseValue("GroupId");
+            return processingResult;*/
+            ProcessingResult aResult = new ProcessingResult();
+            if (response.IsSuccess)
+            {
+                PayByResponseObj obj = (PayByResponseObj)response.Response;
+                aResult.TransactionNumber = obj.getResponseValue("GroupId");
+            }
+            else
+            {
+                return null;
+            }
+
+            return aResult;
+        }
 
     public static bool Contains(this string source, string toCheck, StringComparison comp) => source != null && source.IndexOf(toCheck, comp) > 0;
 
     public static PX.CCProcessingBase.Interfaces.V2.ProcessingResult ProcessReportResponseV2(
       PaybyHttpResponse response)
     {
-      PX.CCProcessingBase.Interfaces.V2.ProcessingResult processingResult = new PX.CCProcessingBase.Interfaces.V2.ProcessingResult();
-      if (!response.IsSuccess)
-        return (PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null;
-      // ISSUE: reference to a compiler-generated field
-      if (PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PayByResponseObj>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PayByResponseObj), typeof (PayByPluginHelper)));
-      }
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      PayByResponseObj payByResponseObj = PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0.Target((CallSite) PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0, response.Response);
-      if (payByResponseObj.responseList.Where<PayByResponse>((Func<PayByResponse, bool>) (o => o.Key == "Error")).Any<PayByResponse>())
-      {
-        processingResult.ResponseCode = PayByPluginHelper.DirectEntryStatus("S").DirectEntry_Code;
-        processingResult.ResponseReasonText = payByResponseObj.getResponseValue("Error");
-        processingResult.ResponseText = payByResponseObj.getResponseValue("Error");
-        processingResult.AuthorizationNbr = "-500";
-        processingResult.TransactionNumber = "-500";
-      }
-      else
-      {
-        processingResult.AuthorizationNbr = payByResponseObj.getResponseValue("LodgementRef");
-        processingResult.ResponseCode = PayByPluginHelper.DirectEntryStatus(payByResponseObj.getResponseValue("Status")).DirectEntry_Code;
-        processingResult.ResponseReasonText = PayByPluginHelper.DirectEntryStatus(payByResponseObj.getResponseValue("Status")).DirectEntry_Descr;
-        if (processingResult.ResponseCode == "ERR")
-          throw new Exception(((PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null).ResponseReasonText);
-        processingResult.TransactionNumber = payByResponseObj.getResponseValue("TxnReference");
-        processingResult.ResponseReasonCode = payByResponseObj.getResponseValue("BatchId");
-        processingResult.ResponseText = payByResponseObj.getResponseValue("Status");
-      }
-      return processingResult;
-    }
+            /*PX.CCProcessingBase.Interfaces.V2.ProcessingResult processingResult = new PX.CCProcessingBase.Interfaces.V2.ProcessingResult();
+            if (!response.IsSuccess)
+              return (PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null;
+            // ISSUE: reference to a compiler-generated field
+            if (PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0 == null)
+            {
+              // ISSUE: reference to a compiler-generated field
+              PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PayByResponseObj>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PayByResponseObj), typeof (PayByPluginHelper)));
+            }
+            // ISSUE: reference to a compiler-generated field
+            // ISSUE: reference to a compiler-generated field
+            PayByResponseObj payByResponseObj = PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0.Target((CallSite) PayByPluginHelper.\u003C\u003Eo__16.\u003C\u003Ep__0, response.Response);
+            if (payByResponseObj.responseList.Where<PayByResponse>((Func<PayByResponse, bool>) (o => o.Key == "Error")).Any<PayByResponse>())
+            {
+              processingResult.ResponseCode = PayByPluginHelper.DirectEntryStatus("S").DirectEntry_Code;
+              processingResult.ResponseReasonText = payByResponseObj.getResponseValue("Error");
+              processingResult.ResponseText = payByResponseObj.getResponseValue("Error");
+              processingResult.AuthorizationNbr = "-500";
+              processingResult.TransactionNumber = "-500";
+            }
+            else
+            {
+              processingResult.AuthorizationNbr = payByResponseObj.getResponseValue("LodgementRef");
+              processingResult.ResponseCode = PayByPluginHelper.DirectEntryStatus(payByResponseObj.getResponseValue("Status")).DirectEntry_Code;
+              processingResult.ResponseReasonText = PayByPluginHelper.DirectEntryStatus(payByResponseObj.getResponseValue("Status")).DirectEntry_Descr;
+              if (processingResult.ResponseCode == "ERR")
+                throw new Exception(((PX.CCProcessingBase.Interfaces.V2.ProcessingResult) null).ResponseReasonText);
+              processingResult.TransactionNumber = payByResponseObj.getResponseValue("TxnReference");
+              processingResult.ResponseReasonCode = payByResponseObj.getResponseValue("BatchId");
+              processingResult.ResponseText = payByResponseObj.getResponseValue("Status");
+
+            }
+            return processingResult;*/
+            ProcessingResult aResult = new ProcessingResult();
+            if (response.IsSuccess)
+            {
+                PayByResponseObj obj = (PayByResponseObj)response.Response;
+                //  aResult.ErrorText = response.Message;
+                if (obj.responseList.Where(o => o.Key == "Error").Any())// response.Message.Contains("No client ids were obtained for this certificate", StringComparison.OrdinalIgnoreCase))
+                {
+                    aResult.ResponseCode = DirectEntryStatus("S").DirectEntry_Code;
+                    aResult.ResponseReasonText = obj.getResponseValue("Error"); ;
+                    aResult.ResponseText = obj.getResponseValue("Error");
+                    aResult.AuthorizationNbr = "-500";
+                    aResult.TransactionNumber = "-500";
+                }
+                else
+                {
+                    aResult.AuthorizationNbr = obj.getResponseValue("LodgementRef");// 
+                    aResult.ResponseCode = DirectEntryStatus(obj.getResponseValue("Status")).DirectEntry_Code;
+                    aResult.ResponseReasonText = DirectEntryStatus(obj.getResponseValue("Status")).DirectEntry_Descr;
+                    if (aResult.ResponseCode == ConstantCommon.DE_CODE_ERR)
+                    {
+                        aResult = null;
+                        throw new Exception(aResult.ResponseReasonText);
+                    }
+
+                    aResult.TransactionNumber = obj.getResponseValue("TxnReference");
+                    aResult.ResponseReasonCode = obj.getResponseValue("BatchId");// 
+                    aResult.ResponseText = obj.getResponseValue("Status");
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+
+            return aResult;
+        }
 
     public static bool IsAuthorized(string responsecode) => responsecode == "00";
 

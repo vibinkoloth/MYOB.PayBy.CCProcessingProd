@@ -123,7 +123,8 @@ label_4:
       }
       if (IframeType == 0)
         return ((HostedFormData) null, false);
-      throw new PXException("Response Null");
+            // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
+            throw new PXException("Response Null");
     }
 
     private PaymentInitResponse Processor(PayByHttpRequest transactionRequest2) => this.ProcessInitResponse(this.ProcessRequest<PayByHttpRequest, PaybyHttpResponse, createInitController>(transactionRequest2, new createInitController(transactionRequest2)));
@@ -134,15 +135,22 @@ label_4:
       if (!response.IsSuccess)
         return paymentInitResponse1;
       PaymentInitResponse paymentInitResponse2 = new PaymentInitResponse();
-      // ISSUE: reference to a compiler-generated field
-      if (PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PaymentInitResponse>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PaymentInitResponse), typeof (PayByHostedFormHelperV2)));
-      }
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      return PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0.Target((CallSite) PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0, response.Response);
-    }
+            // ISSUE: reference to a compiler-generated field
+            /* if (PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0 == null)
+             {
+               // ISSUE: reference to a compiler-generated field
+               PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PaymentInitResponse>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PaymentInitResponse), typeof (PayByHostedFormHelperV2)));
+             }
+             // ISSUE: reference to a compiler-generated field
+             // ISSUE: reference to a compiler-generated field
+             return PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0.Target((CallSite) PayByHostedFormHelperV2.\u003C\u003Eo__7.\u003C\u003Ep__0, response.Response);*/
+            if (response.IsSuccess)
+            {
+                //completeResp = new PaymentCompleteResponse();
+                paymentInitResponse2 = (PaymentInitResponse)response.Response;
+
+            }
+            return paymentInitResponse2;
+        }
   }
 }

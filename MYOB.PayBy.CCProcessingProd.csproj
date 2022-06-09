@@ -119,7 +119,10 @@
     <Compile Include="Common\createTransactionController.cs" />
     <Compile Include="Common\PayByPluginHelper.cs" />
     <Compile Include="PX\CCProcessing\V2\ICCPaymentProfileProcessor.cs" />
-    <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetPath) C:\phoenix\phoenix\Bin /Y
+xcopy $(TargetDir)$(TargetName).pdb C:\phoenix\phoenix\Bin /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

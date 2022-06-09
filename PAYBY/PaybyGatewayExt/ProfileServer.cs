@@ -50,7 +50,8 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
           response = ProfileServer.GetCustomerTransaction(str);
         }
         if (response.token != paymentProfileId)
-          throw new PXException("\r\nThe credit card number entered does not match the existing one. \r\nYou must re-enter the current credit card number in order to change any of the other details (your changes have not been saved). \r\nPlease try again, entering the original credit card number along with any other updates.\r\nNote: If you want to change the credit card number, you will need to create a new Payment Method.");
+                    // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
+                    throw new PXException("\r\nThe credit card number entered does not match the existing one. \r\nYou must re-enter the current credit card number in order to change any of the other details (your changes have not been saved). \r\nPlease try again, entering the original credit card number along with any other updates.\r\nNote: If you want to change the credit card number, you will need to create a new Payment Method.");
       }
       return response.ToCreditCardData();
     }
@@ -92,7 +93,8 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
       {
         ProfileServer.syncSession();
         if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(key))
-          throw new PXException("\r\n\r\nA card with this number is already registered to this customer");
+                    // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
+                    throw new PXException("\r\n\r\nA card with this number is already registered to this customer");
       }
       List<CreditCardData> allPaymentProfiles = new List<CreditCardData>();
       ProfileServer.syncPaybyRequestsForCustomer(customerProfileId);

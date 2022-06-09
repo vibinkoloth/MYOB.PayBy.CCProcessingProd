@@ -1,7 +1,29 @@
-
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYOB.PayBy.CCProcessing", "MYOB.PayBy.CCProcessingProd.csproj", "{DA7127A7-7818-4C28-B2A6-24BC5EC2FBA2}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYOB.PayBy.CCProcessingProd", "MYOB.PayBy.CCProcessingProd.csproj", "{DA7127A7-7818-4C28-B2A6-24BC5EC2FBA2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "phoenix", "http://localhost/phoenix", "{81B03525-9339-4D69-AE65-DA9EB428BC30}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
+		Debug.AspNetCompiler.VirtualPath = "/phoenix"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\phoenix\phoenix\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\phoenix\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/phoenix"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\phoenix\phoenix\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\phoenix\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\phoenix\phoenix\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +35,15 @@ Global
 		{DA7127A7-7818-4C28-B2A6-24BC5EC2FBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA7127A7-7818-4C28-B2A6-24BC5EC2FBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA7127A7-7818-4C28-B2A6-24BC5EC2FBA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B03525-9339-4D69-AE65-DA9EB428BC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B03525-9339-4D69-AE65-DA9EB428BC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B03525-9339-4D69-AE65-DA9EB428BC30}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B03525-9339-4D69-AE65-DA9EB428BC30}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DB5C270-8C20-4CA5-8CE9-E8D875D0396F}
 	EndGlobalSection
 EndGlobal

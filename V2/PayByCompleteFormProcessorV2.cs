@@ -34,15 +34,23 @@ namespace MYOB.PayBy.CCProcessing.V2
       if (!response.IsSuccess)
         return completeResponse1;
       PaymentCompleteResponse completeResponse2 = new PaymentCompleteResponse();
-      // ISSUE: reference to a compiler-generated field
-      if (PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PaymentCompleteResponse>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PaymentCompleteResponse), typeof (PayByCompleteFormProcessorV2)));
-      }
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      return PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0.Target((CallSite) PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0, response.Response);
-    }
+            // ISSUE: reference to a compiler-generated field
+            //if (PayByCompleteFormProcessorV2.\u003Eo__2.\u003C\u003Ep__0 == null)
+            //{
+            //  // ISSUE: reference to a compiler-generated field
+            //  PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PaymentCompleteResponse>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (PaymentCompleteResponse), typeof (PayByCompleteFormProcessorV2)));
+            //}
+            //// ISSUE: reference to a compiler-generated field
+            //// ISSUE: reference to a compiler-generated field
+            //return PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0.Target((CallSite) PayByCompleteFormProcessorV2.\u003C\u003Eo__2.\u003C\u003Ep__0, response.Response);
+            if (response.IsSuccess)
+            {
+                //completeResp = new PaymentCompleteResponse();
+                completeResponse2 = (PaymentCompleteResponse)response.Response;
+                
+            }
+            return completeResponse2;
+            // return completeResp;
+        }
   }
 }

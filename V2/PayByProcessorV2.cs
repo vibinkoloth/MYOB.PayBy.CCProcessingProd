@@ -64,7 +64,7 @@ namespace MYOB.PayBy.CCProcessing.V2
 
     protected virtual string ValidateResponse(PaybyHttpResponse response) => PayByPluginHelper.GetResponseError(response);
 
-    private string ValidateErrorResponse(PaybyHttpResponse errorResponse)
+    /*private string ValidateErrorResponse(PaybyHttpResponse errorResponse)
     {
       if (errorResponse == null)
         return string.Empty;
@@ -93,7 +93,7 @@ namespace MYOB.PayBy.CCProcessing.V2
       object obj = PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__0.Target((CallSite) PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__0, typeof (PayByPluginHelper), errorResponse.Response);
       return target((CallSite) p1, obj);
     }
-
+    */
     protected TS ProcessRequest<TQ, TS, TC>(TQ request, TC controller)
       where TQ : PayByHttpRequest
       where TS : PaybyHttpResponse
@@ -139,7 +139,8 @@ namespace MYOB.PayBy.CCProcessing.V2
         else
           PXTrace.WriteError("Received Response Is Empty");
         this.Logger.Log(PX.CCProcessingBase.Logging.LogLevel.Error, (Func<string>) (() => "Received Response Is Empty"), (Exception) null);
-        throw new PXException("The request cannot be processed. Probably there are some network issues.", (Exception) ex);
+                // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
+                throw new PXException("The request cannot be processed. Probably there are some network issues.", (Exception) ex);
       }
       catch (Exception ex)
       {

@@ -71,24 +71,37 @@ namespace MYOB.PayBy.CCProcessing.Common
 
     private static PaybyHttpResponse PayByResponse(ref PaybyHttpResponse response)
     {
-      if (response.Response is PaymentRealTimeResponse)
-      {
-        // ISSUE: reference to a compiler-generated field
-        if (PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0 == null)
-        {
-          // ISSUE: reference to a compiler-generated field
-          PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PaymentRealTimeResponse>>.Create(Binder.Convert(CSharpBinderFlags.ConvertExplicit, typeof (PaymentRealTimeResponse), typeof (PayByHttpUtility)));
+            /*if (response.Response is PaymentRealTimeResponse)
+            {
+              // ISSUE: reference to a compiler-generated field
+              if (PayByHttpUtility..\u003C\u003Ep__0 == null)
+              {
+                // ISSUE: reference to a compiler-generated field
+                PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0 = CallSite<Func<CallSite, object, PaymentRealTimeResponse>>.Create(Binder.Convert(CSharpBinderFlags.ConvertExplicit, typeof (PaymentRealTimeResponse), typeof (PayByHttpUtility)));
+              }
+              // ISSUE: reference to a compiler-generated field
+              // ISSUE: reference to a compiler-generated field
+              PaymentRealTimeResponse realTimeResponse = PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0.Target((CallSite) PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0, response.Response);
+              return PayByHttpUtility.ReponseMethod(realTimeResponse.responseCode, realTimeResponse.responseText, ref response);
+            }
+            response.IsSuccess = true;
+            response.HttpResponseCode = messageTypeEnum.Ok;
+            response.Message = "Success";
+            return response;*/
+            if (response.Response is PaymentRealTimeResponse)
+            {
+                PaymentRealTimeResponse obj = (PaymentRealTimeResponse)response.Response;
+                return ReponseMethod(obj.responseCode, obj.responseText, ref response);
+            }
+            else // (response.Response is PaymentInitResponse)
+            {
+                response.IsSuccess = true;
+                response.HttpResponseCode = messageTypeEnum.Ok;
+                response.Message = "Success";
+            }
+
+            return response;
         }
-        // ISSUE: reference to a compiler-generated field
-        // ISSUE: reference to a compiler-generated field
-        PaymentRealTimeResponse realTimeResponse = PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0.Target((CallSite) PayByHttpUtility.\u003C\u003Eo__4.\u003C\u003Ep__0, response.Response);
-        return PayByHttpUtility.ReponseMethod(realTimeResponse.responseCode, realTimeResponse.responseText, ref response);
-      }
-      response.IsSuccess = true;
-      response.HttpResponseCode = messageTypeEnum.Ok;
-      response.Message = "Success";
-      return response;
-    }
 
     private static PaybyHttpResponse ReponseMethod(
       string responseCode,
