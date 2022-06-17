@@ -8,7 +8,7 @@ namespace MYOB.PayBy.CCProcessing.Common
 {
   public class PaybyHttpResponse
   {
-    public object Response { get; set; }
+    public dynamic Response { get; set; }
 
     public messageTypeEnum HttpResponseCode { get; set; }
 

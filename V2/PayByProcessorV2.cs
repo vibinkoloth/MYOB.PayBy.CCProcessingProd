@@ -37,7 +37,7 @@ namespace MYOB.PayBy.CCProcessing.V2
     {
       get
       {
-        switch (PayByPluginHelper.GetTestMode(this._settingValues))
+        switch (PayByPluginHelper.GetEnvironment(this._settingValues))
         {
           case EnvironmentV2.Environment.DEBUG:
             string str = this._settingValues.FirstOrDefault<SettingsValue>((Func<SettingsValue, bool>) (x => x.DetailID == "DEBUGURL"))?.Value;
@@ -64,36 +64,16 @@ namespace MYOB.PayBy.CCProcessing.V2
 
     protected virtual string ValidateResponse(PaybyHttpResponse response) => PayByPluginHelper.GetResponseError(response);
 
-    /*private string ValidateErrorResponse(PaybyHttpResponse errorResponse)
+    private string ValidateErrorResponse(PaybyHttpResponse errorResponse)
     {
-      if (errorResponse == null)
-        return string.Empty;
-      // ISSUE: reference to a compiler-generated field
-      if (PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__1 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__1 = CallSite<Func<CallSite, object, string>>.Create(Binder.Convert(CSharpBinderFlags.None, typeof (string), typeof (PayByProcessorV2)));
-      }
-      // ISSUE: reference to a compiler-generated field
-      Func<CallSite, object, string> target = PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__1.Target;
-      // ISSUE: reference to a compiler-generated field
-      CallSite<Func<CallSite, object, string>> p1 = PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__1;
-      // ISSUE: reference to a compiler-generated field
-      if (PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__0 == null)
-      {
-        // ISSUE: reference to a compiler-generated field
-        PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__0 = CallSite<Func<CallSite, System.Type, object, object>>.Create(Binder.InvokeMember(CSharpBinderFlags.None, "BuildMessagesString", (IEnumerable<System.Type>) null, typeof (PayByProcessorV2), (IEnumerable<CSharpArgumentInfo>) new CSharpArgumentInfo[2]
-        {
-          CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.UseCompileTimeType | CSharpArgumentInfoFlags.IsStaticType, (string) null),
-          CSharpArgumentInfo.Create(CSharpArgumentInfoFlags.None, (string) null)
-        }));
-      }
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      object obj = PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__0.Target((CallSite) PayByProcessorV2.\u003C\u003Eo__12.\u003C\u003Ep__0, typeof (PayByPluginHelper), errorResponse.Response);
-      return target((CallSite) p1, obj);
+            if (errorResponse != null)
+            {
+                return PayByPluginHelper.BuildMessagesString(errorResponse.Response);
+            }
+
+            return string.Empty;
     }
-    */
+    
     protected TS ProcessRequest<TQ, TS, TC>(TQ request, TC controller)
       where TQ : PayByHttpRequest
       where TS : PaybyHttpResponse

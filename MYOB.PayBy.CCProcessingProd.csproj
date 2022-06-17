@@ -59,9 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CCProcTranExt.cs" />
+    <Compile Include="Common\CreditCardUrlResponse.cs" />
     <Compile Include="CustomerPaymentMethodExt.cs" />
     <Compile Include="ARRegisterExt.cs" />
     <Compile Include="ARPaymentExt.cs" />
+    <Compile Include="V2\CreditCardUrlHelper.cs" />
     <Compile Include="V2\PayByValidatorV2.cs" />
     <Compile Include="V2\PayByDirectDebitProcessingPlugin.cs" />
     <Compile Include="V2\PayByProcessingPluginV2.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="V2\PayByHostedFormHelperV2.cs" />
     <Compile Include="V2\PayByDDTransactionProcessorV2.cs" />
     <Compile Include="V2\PayByReportProcessorV2.cs" />
+    <Compile Include="V2\CreditCardUrlProcessorV2.cs" />
     <Compile Include="V2\TransactionGetterV2.cs" />
     <Compile Include="V2\ProfileCreatorV2.cs" />
     <Compile Include="V2\PayByHostedPaymentFormProcessorV2.cs" />

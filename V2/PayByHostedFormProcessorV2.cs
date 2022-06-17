@@ -29,6 +29,8 @@ namespace MYOB.PayBy.CCProcessing.V2
       };
       input.CustomerData = customerData;
       string curyid = this._settingsValues.Where<SettingsValue>((Func<SettingsValue, bool>) (x => x.DetailID == "CURRENCY")).Select<SettingsValue, string>((Func<SettingsValue, string>) (v => v.Value)).FirstOrDefault<string>();
+            // return 
+           // return new HostedFormData() { Url = "Test.com" };
       return this.GetHostedFormData(input, this._settingsValues, 1, curyid).FormData;
     }
 
@@ -46,5 +48,18 @@ namespace MYOB.PayBy.CCProcessing.V2
       string curyid = this._settingsValues.Where<SettingsValue>((Func<SettingsValue, bool>) (x => x.DetailID == "CURRENCY")).Select<SettingsValue, string>((Func<SettingsValue, string>) (v => v.Value)).FirstOrDefault<string>();
       return this.GetHostedFormData(input, this._settingsValues, 1, curyid).FormData;
     }
+
+    public string TestData(CustomerData customerData)
+        {
+            customerData = new CustomerData()
+            { CustomerCD = "", CustomerName = "", CustomerProfileID = "", Email = "" };
+            ProcessingInput input = new ProcessingInput()
+            {
+                CustomerData = new CustomerData()
+            };
+            input.CustomerData = customerData;
+            string curyid = this._settingsValues.Where<SettingsValue>((Func<SettingsValue, bool>)(x => x.DetailID == "CURRENCY")).Select<SettingsValue, string>((Func<SettingsValue, string>)(v => v.Value)).FirstOrDefault<string>();
+            return this.GetHostedFormData(input, this._settingsValues, 1, curyid).FormData.Url;
+        }
   }
 }
