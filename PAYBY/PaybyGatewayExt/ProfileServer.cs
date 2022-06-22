@@ -126,7 +126,9 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
         clientId = Convert.ToInt32(transactionRequest2.paybyClientConfig.clientId),
         reqid = paybyInitReqPair.RequestId
       };
-      PaymentCompleteResponse completeResponse = new PayByCompleteFormProcessorV2(paybyInitReqPair.SettingValues).Processor(transactionRequest2);
+            
+
+            PaymentCompleteResponse completeResponse = new PayByCompleteFormProcessorV2(paybyInitReqPair.SettingValues).Processor(transactionRequest2);
       if (completeResponse == null || string.IsNullOrWhiteSpace(completeResponse.token))
         return;
       ProfileServer.customerTransactions[str] = new ProfileServer.Transaction()

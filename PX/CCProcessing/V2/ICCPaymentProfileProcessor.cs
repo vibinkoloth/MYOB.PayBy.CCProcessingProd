@@ -23,5 +23,7 @@ namespace PX.CCProcessing.V2
       string paymentProfileId);
 
     void UpdatePaymentProfile(string customerProfileId, CreditCardData cardData);
+
+        void test();
   }
 }

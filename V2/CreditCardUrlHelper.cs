@@ -42,10 +42,10 @@ namespace MYOB.PayBy.CCProcessing.V2
             set => this._callbackUrl = value;
         }
 
-     public (CreditCardUrlResponse response, bool IsSuccess) GetUrlForCreditCard(
-      ProcessingInput input,
-      IEnumerable<SettingsValue> settingsValues,
-      string curyid = "AUD")
+        public (CreditCardUrlResponse response, bool IsSuccess) GetUrlForCreditCard(
+         ProcessingInput input,
+         IEnumerable<SettingsValue> settingsValues,
+         string curyid = "AUD")
         {
             PayByHttpRequest request = new PayByHttpRequest();
             request.OperationType = operationEnum.PAYMENT_INIT;
@@ -96,14 +96,15 @@ namespace MYOB.PayBy.CCProcessing.V2
                     RequestID = initResponse.reqid
                 }, true);
             }
-            else {
+            else
+            {
                 return (null, false);
-            }  
+            }
             // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
-            throw new PXException("Response Null");           
+            throw new PXException("Response Null");
         }
 
-            /// <summary>
+        /// <summary>
         /// Send request to PayBy and get the Payment Url in response, then this Url use for to open the hosted form
         /// </summary>
         /// <param name="transactionRequest2"></param>
@@ -131,5 +132,111 @@ namespace MYOB.PayBy.CCProcessing.V2
             }
             return initResp;
         }
+
+
+        public IEnumerable<CreditCardData> GetAllPaymentProfiles(
+      string customerProfileId, IEnumerable<SettingsValue> settingsValues,string requestedId)
+        {
+            PXTrace.WriteInformation("GetAllPaymentProfiles on machine " + System.Environment.MachineName);
+           
+            //if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(key))
+            //{
+            //    ProfileServer.syncSession();
+            //    if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(key))
+            //        // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
+            //        throw new PXException("\r\n\r\nA card with this number is already registered to this customer");
+            //}
+            List<CreditCardData> allPaymentProfiles = new List<CreditCardData>();
+            var tes  = syncPaybyRequestsForCustomer(customerProfileId,settingsValues,requestedId);
+            PaymentCompleteResponse customerTransaction = tes;//ProfileServer.GetCustomerTransaction(customerProfileId);
+            allPaymentProfiles.Add(customerTransaction != null ? ToCreditCardData(customerTransaction) : (CreditCardData)null);
+            return (IEnumerable<CreditCardData>)allPaymentProfiles;
+            //return null;
+        }
+
+        private static PaymentCompleteResponse syncPaybyRequestsForCustomer(string customerProfileId,IEnumerable<SettingsValue> settingsValues,string requestedId)
+        {
+            PXTrace.WriteInformation("syncPaybyRequestsForCustomer on machine " + System.Environment.MachineName);
+            //string str = customerProfileId.SessionIdSufix();
+            //if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(str))
+            //    return;
+            //ProfileServer.PaybyInitReqPair paybyInitReqPair = ProfileServer.paybyInitRequestOnTheFly[str];
+            //if (paybyInitReqPair == null)
+            //    return;
+            //PXTrace.WriteInformation("syncPaybyRequestsForCustomer, on the fly will be removed. " + str);
+            //ProfileServer.paybyInitRequestOnTheFly.Remove(str);
+            //ProfileServer.removeOnTheFlyFromSession(str);
+            PayByClientConfig clientConfig = PayByPluginHelper.GetClientConfig(settingsValues);
+            PayByHttpRequest transactionRequest2 = new PayByHttpRequest()
+            {
+                OperationType = operationEnum.PAYMENT_COMPLETE,
+                paybyClientConfig = clientConfig
+            };
+            transactionRequest2.completeRequest = new PaymentCompleteRequest()
+            {
+                clientId = Convert.ToInt32(transactionRequest2.paybyClientConfig.clientId),
+                reqid = requestedId
+            };
+
+
+            PaymentCompleteResponse completeResponse = new PayByCompleteFormProcessorV2(settingsValues).Processor(transactionRequest2);
+            if (completeResponse == null || string.IsNullOrWhiteSpace(completeResponse.token))
+            {
+                return null;
+            }
+            //ProfileServer.customerTransactions[str] = new ProfileServer.Transaction()
+            //{
+            //    TransactionId = completeResponse.token,
+            //    paymentCompleteResponse = completeResponse
+            //};
+            return completeResponse;
+        }
+
+        //public static CreditCardData GetPaymentProfile(string paymentProfileId)
+        //{
+        //    PaymentCompleteResponse response = ProfileServer.GetTransaction(paymentProfileId, true);
+        //    if (response == null)
+        //    {
+        //        string str = (string)null;
+        //        foreach (string key in ProfileServer.paybyInitRequestOnTheFly.Keys)
+        //        {
+        //            if (key.EndsWith(HttpContext.Current.Session.SessionID))
+        //            {
+        //                str = key.Replace(HttpContext.Current.Session.SessionID, "");
+        //                break;
+        //            }
+        //        }
+        //        if (str != null)
+        //        {
+        //            ProfileServer.syncPaybyRequestsForCustomer(str);
+        //            response = ProfileServer.GetCustomerTransaction(str);
+        //        }
+        //        if (response.token != paymentProfileId)
+        //            // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
+        //            throw new PXException("\r\nThe credit card number entered does not match the existing one. \r\nYou must re-enter the current credit card number in order to change any of the other details (your changes have not been saved). \r\nPlease try again, entering the original credit card number along with any other updates.\r\nNote: If you want to change the credit card number, you will need to create a new Payment Method.");
+        //    }
+        //    return response.ToCreditCardData();
+        //}
+
+        public static CreditCardData ToCreditCardData(PaymentCompleteResponse response)
+        {
+            return new CreditCardData()
+            {
+                CardNumber = response.creditCard.number,
+                PaymentProfileID = response.token,
+                CardExpirationDate = new DateTime?(PayByPluginHelper.Expiration(response.creditCard.expiry, out string _))
+            };
+        }
+
+        //   private static CreditCardData ToCreditCardData(
+        //this PaymentCompleteResponse response)
+        //   {
+        //       return new CreditCardData()
+        //       {
+        //           CardNumber = response.creditCard.number,
+        //           PaymentProfileID = response.token,
+        //           CardExpirationDate = new DateTime?(PayByPluginHelper.Expiration(response.creditCard.expiry, out string _))
+        //       };
+        //   }
     }
 }

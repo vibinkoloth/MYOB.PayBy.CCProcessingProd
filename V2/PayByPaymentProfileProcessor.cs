@@ -18,7 +18,12 @@ namespace MYOB.PayBy.CCProcessing.V2
     {
     }
 
-    private bool CheckRequiredFieldsMissedError(string message) => message.Contains("E00027");
+        public void test()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CheckRequiredFieldsMissedError(string message) => message.Contains("E00027");
 
     string ICCPaymentProfileProcessor.CreatePaymentProfile(
       string customerProfileId,
