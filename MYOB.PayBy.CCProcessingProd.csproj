@@ -35,7 +35,14 @@
     <Reference Include="Autofac">
       <HintPath>..\..\..\phoenix\phoenix\Bin\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="MAKLEVOKC2019R1">
+      <HintPath>..\..\..\phoenix\phoenix\Bin\MAKLEVOKC2019R1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\phoenix\phoenix\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PX.CCProcessingBase">
       <HintPath>..\..\..\phoenix\phoenix\Bin\PX.CCProcessingBase.dll</HintPath>
     </Reference>
@@ -45,6 +52,7 @@
     <Reference Include="PX.Data">
       <HintPath>..\..\..\phoenix\phoenix\Bin\PX.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PX.DbServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e" />
     <Reference Include="PX.Objects">
       <HintPath>..\..\..\phoenix\phoenix\Bin\PX.Objects.dll</HintPath>
     </Reference>

@@ -2,8 +2,11 @@
 using gateway_client_csharp.au.com.gateway.client.payment;
 using MYOB.PayBy.CCProcessing.Common;
 using MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt;
+using Newtonsoft.Json;
 using PX.CCProcessingBase.Interfaces.V2;
+using PX.Common;
 using PX.Data;
+using PX.Objects.AR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -88,6 +91,21 @@ namespace MYOB.PayBy.CCProcessing.V2
             if (initResponse != null && !string.IsNullOrWhiteSpace(initResponse?.paymentPageUrl))
             {
                 ProfileServer.SavePaybyInitRequest(customerCd, settingsValues, initResponse.reqid);
+                string data = "string";
+                PXTrace.WriteInformation("GetAllPaymentProfiles on machine " + System.Environment.MachineName);
+                PXDatabase.Update<MAKLRequestCustomerPaymentMethod>(new PXDataFieldAssign("Settings", JsonConvert.SerializeObject(settingsValues)),
+                                new PXDataFieldRestrict("RequestID", PXDbType.NVarChar, 255, initResponse.reqid, PXComp.EQ));
+                //string key = customerProfileId.SessionIdSufix();
+                //using (PXDataRecord settings =
+                //    PXDatabase.SelectSingle<MAKLRequestCustomerPaymentMethod>(
+                //        new PXDataField("Settings"),
+                //        new PXDataFieldValue("", "")))
+                //{
+                //    if (settings != null)
+                //    {
+                //        data = settings.GetString(0);
+                //    }
+                //}
                 PXTrace.WriteInformation("Credit Card Url Response : " + initResponse?.ToString());
                 return (new CreditCardUrlResponse()
                 {
