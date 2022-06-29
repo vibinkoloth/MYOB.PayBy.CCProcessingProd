@@ -32,11 +32,24 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             return ProfileServer.paybyInitRequestOnTheFly.ContainsKey(customerId.SessionIdSufix());
         }
 
-        public static CreditCardData GetPaymentProfile(string paymentProfileId)
+        public static CreditCardData GetPaymentProfile(string paymentProfileId,string customerProfileId)
         {
+            string requestIdKey=null;
             if (paymentProfileId == null)
             {
-                paymentProfileId = (string)HttpContext.Current.Session[HttpContext.Current.Session.SessionID];
+                using (PXDataRecord dataRecord =
+                PXDatabase.SelectSingle<MAKLRequestCustomerPaymentMethod>(
+                    new PXDataField("RequestID"),
+                    new PXDataFieldValue("CustomerCCPID", customerProfileId),
+                    new PXDataFieldValue("IsRequestTokenized", 0),
+                    new PXDataFieldValue("IsActiveRequest", 1)))
+                {
+                    if (dataRecord != null)
+                    {
+                        requestIdKey = dataRecord.GetString(0);                        
+                    }
+                }
+                paymentProfileId = $"{customerProfileId}{requestIdKey}";
             }
             PaymentCompleteResponse response = ProfileServer.GetTransaction(paymentProfileId, true);
             //if (response == null)
@@ -96,60 +109,43 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
 
             IEnumerable<SettingsValue> settingsValues = null;
             PXTrace.WriteInformation("GetAllPaymentProfiles on machine " + System.Environment.MachineName);
-            string getConnectorSettings = null;
-            string key = customerProfileId.SessionIdSufix();
-            using (PXDataRecord settings =
+            string getMerchantSettings = null;
+            string getRequestID = string.Empty;
+            using (PXDataRecord dataRecord =
                 PXDatabase.SelectSingle<MAKLRequestCustomerPaymentMethod>(
                     new PXDataField("Settings"),
+                    new PXDataField("RequestID"),
                     new PXDataFieldValue("CustomerCCPID", customerProfileId),
                     new PXDataFieldValue("IsRequestTokenized", 0),
                     new PXDataFieldValue("IsActiveRequest", 1)))
             {
-                if (settings != null)
+                if (dataRecord != null)
                 {
-                    getConnectorSettings = settings.GetString(0);
+                    getMerchantSettings = dataRecord.GetString(0);
+                    getRequestID = dataRecord.GetString(1);
                 }
             }
-            if (getConnectorSettings != null)
+            if (getMerchantSettings != null)
             {
-                settingsValues = JsonConvert.DeserializeObject<IEnumerable<SettingsValue>>(getConnectorSettings);
-            }
-
-            //using (PXDataRecord settings =
-            //    PXDatabase.SelectSingle<MAKLRequestCustomerPaymentMethod>(
-            //        new PXDataField("Settings"),
-            //        new PXDataFieldValue("RequestID", "bFEQNktvSO2JbEX5CmfS")))
-            //{
-            //    if (settings != null)
-            //    {
-            //        data = settings.GetString(0);
-            //    }
-            //}
-
-            //if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(key))
-            //{
-            //  ProfileServer.syncSession();
-            //  if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(key))
-            //              // Acuminator disable once PX1050 HardcodedStringInLocalizationMethod [Justification]
-            //              throw new PXException("\r\n\r\nA card with this number is already registered to this customer");
-            //}
+                settingsValues = JsonConvert.DeserializeObject<IEnumerable<SettingsValue>>(getMerchantSettings);
+            }           
             List<CreditCardData> allPaymentProfiles = new List<CreditCardData>();
-            ProfileServer.syncPaybyRequestsForCustomer(customerProfileId, settingsValues);
+            ProfileServer.syncPaybyRequestsForCustomer(customerProfileId, settingsValues, getRequestID);
             PaymentCompleteResponse customerTransaction = ProfileServer.GetCustomerTransaction(customerProfileId);
             allPaymentProfiles.Add(customerTransaction != null ? customerTransaction.ToCreditCardData() : (CreditCardData)null);
             return (IEnumerable<CreditCardData>)allPaymentProfiles;
         }
 
-        private static void syncPaybyRequestsForCustomer(string customerProfileId, IEnumerable<SettingsValue> settingsValues = null)
+        private static void syncPaybyRequestsForCustomer(string customerProfileId, IEnumerable<SettingsValue> settingsValues = null,string getRequestID=null)
         {
             PXTrace.WriteInformation("syncPaybyRequestsForCustomer on machine " + System.Environment.MachineName);
-            string str = customerProfileId.SessionIdSufix();
+            string transactionKey = $"{customerProfileId}{getRequestID}";//customerProfileId.SessionIdSufix();
             //if (!ProfileServer.paybyInitRequestOnTheFly.ContainsKey(str))
             //  return;
             //ProfileServer.PaybyInitReqPair paybyInitReqPair = ProfileServer.paybyInitRequestOnTheFly[str];
             //if (paybyInitReqPair == null)
             //  return;
-            PXTrace.WriteInformation("syncPaybyRequestsForCustomer, on the fly will be removed. " + str);
+            PXTrace.WriteInformation("syncPaybyRequestsForCustomer, on the fly will be removed. " + transactionKey);
             //ProfileServer.paybyInitRequestOnTheFly.Remove(str);
             //ProfileServer.removeOnTheFlyFromSession(str);
             //PayByClientConfig clientConfig = PayByPluginHelper.GetClientConfig(paybyInitReqPair.SettingValues);
@@ -162,20 +158,17 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             transactionRequest2.completeRequest = new PaymentCompleteRequest()
             {
                 clientId = Convert.ToInt32(transactionRequest2.paybyClientConfig.clientId),
-                reqid = "ik2A21MfRC2UVEcgLtnn"
+                reqid = getRequestID
             };
 
-
-            // PaymentCompleteResponse completeResponse = new PayByCompleteFormProcessorV2(paybyInitReqPair.SettingValues).Processor(transactionRequest2);
             PaymentCompleteResponse completeResponse = new PayByCompleteFormProcessorV2(settingsValues).Processor(transactionRequest2);
             if (completeResponse == null || string.IsNullOrWhiteSpace(completeResponse.token))
                 return;
-            ProfileServer.customerTransactions[str] = new ProfileServer.Transaction()
+            ProfileServer.customerTransactions[transactionKey] = new ProfileServer.Transaction()
             {
                 TransactionId = completeResponse.token,
                 paymentCompleteResponse = completeResponse
-            };
-            HttpContext.Current.Session[HttpContext.Current.Session.SessionID] = completeResponse.token;
+            };            
         }
 
         public static void SavePaybyInitRequest(

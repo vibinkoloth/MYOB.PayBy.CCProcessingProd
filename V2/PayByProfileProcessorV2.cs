@@ -46,7 +46,7 @@ namespace MYOB.PayBy.CCProcessing.V2
       string customerProfileId,
       string paymentProfileId)
     {
-      return ProfileServer.GetPaymentProfile(paymentProfileId);
+      return ProfileServer.GetPaymentProfile(paymentProfileId,customerProfileId);
     }
 
     public void UpdateCustomerProfile(CustomerData customerData)
