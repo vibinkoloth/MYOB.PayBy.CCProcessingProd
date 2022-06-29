@@ -96,21 +96,23 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
 
             IEnumerable<SettingsValue> settingsValues = null;
             PXTrace.WriteInformation("GetAllPaymentProfiles on machine " + System.Environment.MachineName);
-            string data = null;
+            string getConnectorSettings = null;
             string key = customerProfileId.SessionIdSufix();
             using (PXDataRecord settings =
                 PXDatabase.SelectSingle<MAKLRequestCustomerPaymentMethod>(
                     new PXDataField("Settings"),
-                    new PXDataFieldValue("RequestID", "ik2A21MfRC2UVEcgLtnn")))
+                    new PXDataFieldValue("CustomerCCPID", customerProfileId),
+                    new PXDataFieldValue("IsRequestTokenized", 0),
+                    new PXDataFieldValue("IsActiveRequest", 1)))
             {
                 if (settings != null)
                 {
-                    data = settings.GetString(0);
+                    getConnectorSettings = settings.GetString(0);
                 }
             }
-            if (data != null)
+            if (getConnectorSettings != null)
             {
-                settingsValues = JsonConvert.DeserializeObject<IEnumerable<SettingsValue>>(data);
+                settingsValues = JsonConvert.DeserializeObject<IEnumerable<SettingsValue>>(getConnectorSettings);
             }
 
             //using (PXDataRecord settings =
