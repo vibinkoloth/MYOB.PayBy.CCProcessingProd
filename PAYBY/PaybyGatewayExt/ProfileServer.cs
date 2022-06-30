@@ -131,7 +131,7 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             }           
             List<CreditCardData> allPaymentProfiles = new List<CreditCardData>();
             ProfileServer.syncPaybyRequestsForCustomer(customerProfileId, settingsValues, getRequestID);
-            PaymentCompleteResponse customerTransaction = ProfileServer.GetCustomerTransaction(customerProfileId);
+            PaymentCompleteResponse customerTransaction = ProfileServer.GetCustomerTransaction($"{customerProfileId}{getRequestID}");
             allPaymentProfiles.Add(customerTransaction != null ? customerTransaction.ToCreditCardData() : (CreditCardData)null);
             return (IEnumerable<CreditCardData>)allPaymentProfiles;
         }
