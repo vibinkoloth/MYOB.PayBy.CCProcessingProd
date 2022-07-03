@@ -32,11 +32,11 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             return ProfileServer.paybyInitRequestOnTheFly.ContainsKey(customerId.SessionIdSufix());
         }
 
-        public static CreditCardData GetPaymentProfile(string paymentProfileId,string customerProfileId)
+        public static CreditCardData GetPaymentProfile(string paymentProfileId, string customerProfileId)
         {
-            string requestIdKey=null;
-            if (paymentProfileId == null)
-            {
+            string requestIdKey = null;
+            //if (paymentProfileId == null)
+            //{
                 using (PXDataRecord dataRecord =
                 PXDatabase.SelectSingle<MAKLRequestCustomerPaymentMethod>(
                     new PXDataField("RequestID"),
@@ -46,12 +46,21 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
                 {
                     if (dataRecord != null)
                     {
-                        requestIdKey = dataRecord.GetString(0);                        
+                        requestIdKey = dataRecord.GetString(0);
                     }
                 }
                 paymentProfileId = $"{customerProfileId}{requestIdKey}";
-            }
-            PaymentCompleteResponse response = ProfileServer.GetTransaction(paymentProfileId, true);
+          //  }
+
+            paymentProfileId = $"{customerProfileId}{requestIdKey}";
+            //if(ProfileServer.customerTransactions.ContainsKey(paymentProfileId))
+            //{
+            //    var transaction = ProfileServer.customerTransactions[paymentProfileId].TransactionId;
+            //    response = 
+            //}
+            //var transactionID = 
+            //PaymentCompleteResponse response = ProfileServer.GetTransaction(paymentProfileId, true);
+            PaymentCompleteResponse response = ProfileServer.customerTransactions[paymentProfileId].paymentCompleteResponse;
             //if (response == null)
             //{
             //    string str = (string)null;
@@ -128,7 +137,7 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             if (getMerchantSettings != null)
             {
                 settingsValues = JsonConvert.DeserializeObject<IEnumerable<SettingsValue>>(getMerchantSettings);
-            }           
+            }
             List<CreditCardData> allPaymentProfiles = new List<CreditCardData>();
             ProfileServer.syncPaybyRequestsForCustomer(customerProfileId, settingsValues, getRequestID);
             string key = $"{customerProfileId}{getRequestID}";
@@ -137,7 +146,7 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             return (IEnumerable<CreditCardData>)allPaymentProfiles;
         }
 
-        private static void syncPaybyRequestsForCustomer(string customerProfileId, IEnumerable<SettingsValue> settingsValues = null,string getRequestID=null)
+        private static void syncPaybyRequestsForCustomer(string customerProfileId, IEnumerable<SettingsValue> settingsValues = null, string getRequestID = null)
         {
             PXTrace.WriteInformation("syncPaybyRequestsForCustomer on machine " + System.Environment.MachineName);
             string transactionKey = $"{customerProfileId}{getRequestID}";//customerProfileId.SessionIdSufix();
@@ -169,7 +178,7 @@ namespace MYOB.PayBy.CCProcessing.PAYBY.PaybyGatewayExt
             {
                 TransactionId = completeResponse.token,
                 paymentCompleteResponse = completeResponse
-            };            
+            };
         }
 
         public static void SavePaybyInitRequest(
