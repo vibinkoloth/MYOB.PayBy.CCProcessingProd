@@ -1,0 +1,155 @@
+<Customization level="2" description="MAPayBy 2020R1 2022.05.07.1503" product-version="19.109">
+    <Page path="~/pages/ar/ar302000.aspx" ControlId="2" pageSource="7T1rb9tIkp+9wP4HQossZoGJ5cdkkknkYG3ZzhiJY0NSkjkcDgZNtSXGFKkhKSfexd1vv65+kP0kmyLleLJjDCaS2Oyqrq6urldXD57807v0Z8h758ezFf5w0Bv+reed+1mOUnhwGkb4t//rl79k/dMkXRyj3A+j7QX5uecdrvLk5A7F+acwRavlQS9PV6jnffSjcOrnaIR+X6EsP+jd+FGGfx8mU9bz4Wh/Z29nZ2fbz5Zft4Os553Fc5SGeXbQA2hXvEHPm4Q5vPEhzuHDlODd8568/utf/vqXAR4HRXFyv0TexzDNV3506edzB+ShiwGG/3KYxDkeg3d2fNAL8OddwJT8dBn5Afo1iaYohYfL+fG456Wr2MdjGqP0DneDO/Hw32D59eXlb8d+7o+TVRog7yT2ryN0mOdpeL3KUcZpA/1Ms6KXjPaCUc/CaxjnhLT6FE5hDLs7O08wBfDY3vsL/PDyt+2L688oyLPtwxH+79K/X2A0T+I8ve95l2m48NP7jyH6ctA7ToIVPOMIEiSHfhRd+8HtMFks/HiaCc+EQYyVZh78G+bDOWYWGAhFkWI09u/w58tkuVoWQ6AD7Tt2Tvs5izElcugpy4GKQN/opmkvp2GaGToZ536av0df3qQJMOlkDfze+aaOXfswIkA7HqEI+ZmFhgrhmxG26IutPgoPuOPIz4N5UwocBnmYxBpOdCwdUPgs/n0VAhuP0NIP4xyWYJpEGMRhFFnANoOAO06Ax1pRlXY1XKUpigOy1oTFe0op3awvTLbhKsuThSQHGnZlnuyTKR5n0Xe7vng/XLBk63donAC2zhJ/ehbfJWGANgfgIsUCvUX3nJ2w5M7Q4XIZhYFfsTiO0RLF04v4TRpOsfBH+Qx/2GvKJsBqnPaTBKDeW7puy5AAaXzhBmt/nc5Px26dn467GMrpGMNIsEQBgHR33gA8u7QVGKTYlFvzhB0cFU05k/Gbg/MxWQVYZWu4l9j7+5Skt0dJcrtGX6dqXxdpOAtjPyrpvc5e90+s3s6TNPwXGg6ZpmURLWTvZl1g3eA+Dlj7SerHmc92TrHVxE9nKKeq4Fq4Df1lvkofFWY6Sk5yueHwDXPSKZgGe4mNnBsA9TEJp8KINwBhmCLQFjYKY4SCJN30OCgXXsTRvQJoa2uri5lgxq1lFIO+xcga9BUTUbIcx9hyyy/9GEXEQlzGkUYrxWKEcWJu40T1hkOvFAX0mWJUvkX3gl3oEU0oPkZUNEwKgwN/pQhyU3U8T74c3mCbGd5gLcsBj/N7APGvp2E8RV9fers7L15RzwAQ4ggT4mkhf0boJkXZXHnMJc5NuiiGexbfJBidKMEKFoCmUo/NhEhuQj2w7kHuE9rp3dgoV5LMg2npkf+fo8U1Sg96QSD1oQ9z55V3nYAm+dKLkxjpVGfb0vg2jAEvIiKWfsr2/xt/FXEjBx6j6eUQmrxfAfyeujAmaLGMMNspv5c0eOffJ6t8tIqQOl5inA2TaLWI+Ty/869RlDEvw/icOjwwImMsWA965/rCLOFM0Ncc7ArPgLQKGeh5GqIIT73czrl7EPf1nYutNJHSN5COLUbONxpDlSuRfd7VwPNpPVrleRJn2oSRfuhD0tHFW30EoR8lsxHKMCfQBjB67lQxy0ahx6EfByiq6ZU3oj3zb32dFmSYsqwqhRLxtlVJq2LvB7nrtOK+hPncO/mK1zZW1Dy+rXM7yi7A5HVZDuPRi7PdjuSZzooPJdBuGgo0YVn+UcTZY5E3e63lDf+is0tLscO/6ChuSPIM+oKX3ua037M77U8rffbyWsNfdMrrK0X20JcjEtdbqWkV65MvzvFqAZ56rFImOTqLp+AeSFJNFkGsJFMfeyA67sL83vqAMSn0zX8S5WQY32qv4rbhjd6jaVHjYUFAQuhx4l+fAWUINeg6kSXuuZ/eQiwoxCYGpst97C/CQJJ6FnHQWhQokmBstTjSZHmcfIk9eYwVIqBoMkYRCnI0ZSR4uqutzL4EwgifdpKkDD7eWN5fV0og1kKXarAVsX2pmEV1QkzCEBxElxhFlOYhyrxTP8sx++GdigAELzyPNl1d4V2bwv/R417hs2Px8xX/eOUHQQ52k0lOSiN3mRY83flKj50JZOEtaPRtWuPFG85RcHuUfPUod2QW/y0RMfNbEClVsOlzC39h3p6EC0R2GisQvP1MP0PTyr2HNzFDKjipGsppGF+iNEymZ8cqMJ05ZOjSq/pi1xnQjKiy8RY8VTV2oVGDeFB38uM3gyrByT6DtXHuZ7dVlC+XSCOqi68dRhHWX6fT9xDlZYIffgJaWld8N1i/S6gb2wV7ixxSBiT26I50PYczUXWOsFXRlMW1dw1D0SfB3GVn4zk/i7McVKimg5FehDXH9y+UBalpbOapfINilILXiyyWrDmjSfsb3mgClGVhPBtiSpuWg4no5uCaMFa9V+b107aawhVYbAFMyEMw1k91OW90CAqw+XuvGSzerwjLdbX52fwwCJIVttQaign5TRdVwDRfPuDPAtwjPOfywk3voW8uGFLN2NcxhD5AV6KJKVelIsGBgEF6JRurxbMrl5VFqK6iXb8RM2UPLZMszIlZXqnxSe2s+48w3fXrGgySMEBkk/EDw3w7LVBRAdI7dF2j6lJgXZ37sT9DRhe0yBem9k23Yypcxksf78bWGKWiN2A9HERZjapOmzh1WPhaQJdETExWDNzU3E39fAC7hjop6rROWMYQMsWEOlxUT7PSshZqCQDC4A69F83caGgENb5wBCY0bAHuQ+xDiB9Nj3yDN1aGKLdtAfQsDnM8Cw4gxZYNtGYj1E8XDlRljVoMDiOYzpADKKFhG3BJnCUsqkc6nCR5PV1tbzW1PVfLJZbuGVngisl5ltnjfwI2UjMnBQzvKOC9xfZUvZ9BaKhvPR/9aIWMIR4nr8Oln/oLhDdUNRVVIRYVdqS1J3ijqLuOJQZwtWJ7Kem8zKlxT1sBVjyz8L///vsqyV/J2jX97X+2ycAsjuO+FW0Xp4Yg9qk7tfzhJ4PvUdsJ6nzbCn9Vsc3ow2R0MbFlkLDUTgJnIfAkfQuMoHAWv0M3uUmQaG5wswt8a5CBd9XLsX6I1Wq8FfeDLKN6+3aE+wY/G+sIkwF+/jfRsb7ATvjSe7bz5JV3EyV+/hJav/IWYfyUPftlZ/n1FTT+X9Ib3rbm1u4WeAHjN6EP3OnuE3tHgz7BGDCklAbPGU3rToKMd25P8KZBFDLAwTt0hzd1UWmEzsiv9MetATO42FehFX1AY2IFVN4Mv4eiSJiBLfbzNLzzQmLkQtjmOLzb7XlB5Gd4unVqm5asthh4j/jf3bIzwmI7WDF/8jfvhx8YxhglYF4/xLbkP8pP26CB/dBLqWfnH94TrM7j3l4znLcK7LckYHsysN1GwPBcES9aCa2kkfJVI1kJ2MBS5RTgVzOsypJ34cPebhuEA1nzonhDt6/rZsiKTysCBtQQFPBoxivtqJFRP2+D2cP/7rcbb4VzW8dj0DctQCYDy+XLV3lfWuZCs1IWDPqltBAauMbH9u3xsTeV8bGJf006yf1rTaj9imABHPT2d7CENIeU1bMsRaxob2dHCgGd5WhhPpAC7+CHLJBY5J97eeKx7GF2ZKAM/7NItWnzrog8lyBLmc5TqutjgupQVeKw+C09hZSdxRMgqH3RHE4/Yz6D00t0BwZHAHM84h/DeMZ33YqFV24wlctS5jbJD0OxYPn+Lkt8lHypobAZfPfx/q1C7JliSXhg1jAfIfL7VRQVOrwcASlfNKmH9jE6xmYcwn9iK8lDpOaT1CJWq4FXD6mZZh4IcQwHvbwMezho5evjWqxxji5l+m1fnGkdXYILR1bgCoZrMywrbAr7K1W2RjUpzB6a6eeZyeauXA7Si82WgxWJy8vjtfHg73aEitnh4YQJe7UZIgb/NGMth7hw2azOB9EcidEIzUI4OIutPj+7ujpeoVqMrO90gA47JIY7DbN62piaN0Niba91dbca48E0AgeNTEOqi4DJLzfDRE2E0yaPetEN6WRVM25zva9L7K6S/xrMCBDU4mmtlQP8vXbr0YwSZmQH72/RrB0KKncwRjMErAzsCK3W1JSoh4x/rWS+T2mYo4ubmxHysySGWgPGEGjLVVEIEvahTlEzv9AMCYgYK8SvyN9RZ0Bq6gJ40G+mxKs+KqOfSkHqKPXjYA4YsYX7YheMpBHC5hTh9CSl5t46k2YHW6hz3FLbff4QYLmqXtiHLwCqmDVeCLMwvi3yy41HfrvCScwpgjETb+5BbwRGq2jJAqZrw3RXHU3EsKJFmWWzWHFF8tEhxvTKR4OXSe4ysL/80h7shyVE2CoscarNcYhd82sdDlYd95shZFB1O8LFwHFW5fMBRUoNRUQ97OEWiAtSXDV7NFjZ9Xc+eS86mLzqFc0VRgbx2U+bBthYP+qK1kbNsPFSFWMH1e20oIK9aa3feADCACys0q6gAuE8jLnje/fZTvUQBvQU3JFf57waUGXFFCIwNqeqe5JgUZWyk0tUrYMjf55QwQba5OFSe+DKBaJI9Aq9TS5iIxRUaOIQPEJz/y60OYud+bQvoujETjrxajnLbXowLjXzLce19Ke2Y0J9MU7kEEMSSrJ4v2J5l6QPEUQynOn7z4siXXF6u/DiOVYm5Vx7UbYeowgJstUkb8lvkHJCT0c0cH38cYxaUoFH3ztM5NCsS7lYUBcIYaUGr4z7b2BoM8hmW1sbubEqU4dofHvzukAEm41gMH4T41BAghvU3xoPZj9vFI1KjXPWocZpB1QuxEdjj37HpvGfRunGsBIY+QFNUUFg/GmNtlwd4hk9rABgrRPvBRKH0QN7tNQxHCaiucsdgbw8HqZYE024ZqDpAkULVWvoAvzE/2qgaIOd/z/CwKcNnYx7agqsFc8cgObJ6qWt9T41ORq/yy3f2insys/BatN6UnHawtlhetrO42Gqhfun36PE5ZH4PWjh44dMnN03RqeVglymSlT0JAYcvMDoLtmnORE8L739F3v4q60Ij/p3RIpasbYmL0rP3U1CSn7CMWBSz2dSk23Z3nMyvhAzcB8oAVc9lmQofleThqNm4ZgKZ1SjoxxYI3SghbvrKvMoDfX0WLf6sI7oVR3uLnF2SOct2z3KhN5yPbPatxdClqxAboc82aL1HyFTVkkAGl+MLwj+V1cO1YjUph2ngY0vqtJ2N5SkWwI9CiM8GEfQQuPW2Z/CwnLJihUadp4XK/CDQ0as3rZTBBwyYQ2N107NVLcJPb7RKjXWvvLohNZUfTC17myoulqz+R3RshLdigBsKBG1IDItDAFyve7ovPWVThNUJSjVOZJa01bJmQKbumWIGpufxcsVKRR00Pv7LH81lP+6FRsMrrPkkNpvOJ/UfYz2qJygnLAaC+QXj/5ki0gZs526yr0sdT0JI/zLtmNaqOF+li6Q0zQWhh//uilvuU1XYeAPac0Ub5J4BL9vnbEqKDNF2Q4/zm5QmmIssXnN1sim8ax2JQt6D8Oyy5BHpVrD4a1I8bDNwiwUGQYUqqB58CvUQesUfKsoD8MOf4ZCIxvkjBodiK9oP0IZXU1PSdWqcEnddgyLvYdO07TqBVwGLGA+H5huXCXgrMXKy3UMRdz5WdwJclZgIzbu/gwb9hrbNjaBkbSuOLg1V9R3EcbgFbF5+X7zVvz9ZTPyG/P+9OmXuDwSnz4ru+g5+/ZZJaKTr0vjsXtT5Ufp+L13cODt9ryjkERySVERwIOc+O8sbnA6/r4CBxsNEpyOmwYJNm1hSUzpSZmAz4GQGzOkZMB0Z+ST/dOOMRNQv42yC+xOxwwVd4OqK6LgQRSpDgwavZNauAdTIc2+jTT61ZnfhcWizk6RXMTBbkAjrgDP7ARZ4VXWEH3GJ+znrhiGOhHxrC8hs2EKli3oSVWo8DYqTvtd4WQij1ELb7p6/qA66EOpEqdhjG3T0Me7C9vf1t7PtVt1nA4/KGcfxD2OZaprl+q43LZXNTeOfslvUZfCCSa7cZ3GsMmX4rYhEOegD755V5SlLztzgq0E4cuTBnY3cdlG9edrt1S4jV+LOYiZmU5FkC0vKPi5YeNYw788CVJBqaJNp6APR9bLA+SET+WmAO2GB7e0CB03jsZ4dV2HAmtiSNGwY+Qi5ptnCFTmPjD5xcuD8TOy275IQ4d6ZgLN1yho1iDxoUh4KGalSw7DI/2MjJcViFm3ZaNOuasCrwl+Xo0Ub1GDkXTcSwksQg3W+vp8Yqs6OfhaKNAqaOCir8WTtHLtdnMR576E9Gt+b2c1gdffY/iNdnCFB3gsicJcu/NJuyVd1ettUFJks4I1HOqnFU1cebI+AcyxSE+jlH8mqXh176pbHSKE1Z/KK8uKJm5Q66ldXKQmoFBHeKFRV4MP5rf8tpaMnW2sv9clczwFqSAhw6umt9BoDYpL19XUsrPYrHG+uknysR5rJJ/YqhMFt4lSPVbF08dkFcxRWtgzjihJ1gvro+hCQZImEDBjZhyCHV3hUuR/omnDAJg8nMLVmrtyvWTrANZK/pWmOsKb0Jt3DKva5SO2k/e7otK9Cx4EF6ftT0IM7xvCS83yQYVNshWlPiUplgTJbWVxOtYGRPymCVTg80DEsTogLF0bbkFu3KXe1SYdI4fLZZrcCX4Rc/TDFnJpHxWBkAhHwiEwInlRzCUjTDcPc5eMKYRS6USxObgqg6qtiztU9t6+ZgUn9wPHUwhYlJ5g9kjuEbq6wjZjPjxWXL/dpKIZYdHreruHBmJpBruzcJ5291nXg5ke3dtJ150H3wZtU8Rj8DaVTMWiUW5JO5ss4kGLCJrhboCqWRbOYupbIGypXtNDznupv3UegwHdF6A3Bt7R5KPlt4M+TBGe4yk3dJqh8ZgPUT9U0AYTkJjjfjr1yhtwiUPGpqbUZ4AIN8opuR+Q+rFBNQeu38SDgOiN9baZ3T0y7ZKSY0jVqNBlzDqRUwZYHf80OMg+9u+aHyWnQFocgd/gEfb6pCjSqrVqFgQFj7iMWFc0hUu8uZ4p/MS3Hfdd7RHdeuMOWwuskdsbq707RZOGB1Dku3dg9iynJyvT78X3Wp0Ocrl/vA4R9f1WFBl+/PgRpeENK55Qf7TU8kIrJGBy6w5Xl21ag1qHA8T3WnI7zydvdPcTe6claHapqtvVq2ssN5XbpXtZK0J2UrtWIA9X+bweoNiq5QhHKFvizQlR+wEeV4/U1L79oTqQ2VSLrThHVzZ65IfnCu6zHrnoohxWExnLK5A966w4UyHObEatnDy6maGKUq0Gj+fthu4k3eyV3zqz+kTZZgX3vLuqY5Jk69x9IsqxbuapVlbxnNSWbLm+XDJ256y91XH5XmfuBbOeVLfan7ercSggcJKmScpSpz01WbEzAJQp1O6bJy4/3gRZyI/FX/nG82iyZZE3nEMgLvsmxbScqoObq4yXoeX9nWdq6u1GzXfmWCroBs/eIpI4l5E8HNiRf6TpUz++C2NyMHKTVriS5nqCrep7wMFkFuoXitVdyid117TKlJZW6ZTbWTaqSD5bSwbpGNWmebIGXWNivBQPtnlTQSJjxS/loHbx7mNUy2vu3pF4rPtoF5BGLr7bYQymZNaiVnxnyhPjPfmYUyd6hcgwuga7bvGQx7v/PugBlUFfPX87AGpeY2qyZBbtpvgx8tNgbhbGl0kGiXA+bD0zw0wMmERv/jaeLzteJVnBUYtVA9j8PuFNOPnSq6L0C4HSJYn4D1QML7CyfunHeGcF4beMI3JKe5nr/jR993/xqjg9w46KX5AvmX6ohiKHN+eDXlQAoHsgfOeSlAAv1B41Td+QUxclNBLldB+KqDuUWFjO/7AD+kL2PpqepsmCRs4dTgcNSLAszgkuelxJY2GxufqwYoNo6/9n5c9pC67oP9/REyJ5crj5RE+jcyrWupll/wavWEn9ihTooo1JxBhRJwSqz8SXmjXr3KVyp9LQDkBTV879r1jVbej/Ll6yA2rBUj/rLLW/t1fHUoYpn4RRVDflZRvnWTmJp/UTLjQynCtqAstl/qVmjeApEREQocN5GE2Feh52sKbWbHosccA1mGO8Wi7xWLKixBW1duSYoxyUZP1g3bhK6+GKVbJaQga9lEFNBpihnCbyz64JdY/udY2eb2DsTPK9cv6GvmXTVxw094cO0FJ4I38aJqzICxAgvWY1tSyMT10RvM7Wj5iWNwgOR/OqQCRrAzf4cMJS4+nxNIGua+FEz8pU45QE2zVIXQy7RKoSGwsKo5PTpihUpiYXijBl7Za8z8oxNeb+8r0u+V+tgfpT4xqoXS2JokyEVUIL5e4ZD4oFQTj/HU6UyRcIvjZedehIKFyMjpuj0JADbTxYmg/ss6GoLVOX6SitpWVofwIp+BdD9f/Qj5LZCGVYR8fDf8tpAxtaxYhtAHQelAEMwUMbcSD8m3FP6pdE0XR8A73NZxn4wdvCPANNyWyywSee7Wpb3ScQ+PR4K9Xisdpe1GCjr7HE4RGC07jkAHHWwziJDoqnhS1anr0unglXfBDFBtCgjyCt6qnRYmbL/WfigMLApDdUc/owCNAyp9MJhLnOY4r5xS3AghkzPORTSbRlPNtEnJzyNMQtg8lZfr2sIL1+lsJmZwpGqZ3SRFFWLEriLIjooYvSCmWWJtsJ3icxUjIcC/cA+eYNs2wY+RmmOfCzR+AIbFpo5xUCvIoOBlHeF7vVhIelH9PpOE8yHyoQdMfNqKrKZoqSMlIx/0oqOrwInIu3KyxTQghIsH2NuwXKyWGhNmkB2Ivelee1C1lRQ18uiB0EdTlyQW5Ki8u8Sb1VZeh/ofKAmbw0+rVg+DI1guIPZXDvk2poGsUk8byly2WTTB70/Wz5kq1L/P3/AQ==">
+        <PXDataSource ID="ds" ParentId="phDS_ds" TypeFullName="PX.Web.UI.PXDataSource">
+            <Children Key="CallbackCommands">
+                <AddItem>
+                    <PXDSCallbackCommand TypeFullName="PX.Web.UI.PXDSCallbackCommand">
+                        <Prop Key="Name" Value="CreateCCPaymentMethodHF" />
+                        <Prop Key="Visible" Value="True" />
+                        <Prop Key="PopupCommand" Value="SyncCCPaymentMethods" />
+                        <Prop Key="PopupCommandTarget" Value="ds" />
+                    </PXDSCallbackCommand>
+                </AddItem>
+                <AddItem>
+                    <PXDSCallbackCommand TypeFullName="PX.Web.UI.PXDSCallbackCommand">
+                        <Prop Key="Name" Value="SyncCCPaymentMethods" />
+                        <Prop Key="Visible" Value="False" />
+                        <Prop Key="CommitChanges" Value="True" />
+                    </PXDSCallbackCommand>
+                </AddItem>
+            </Children>
+        </PXDataSource>
+        <PXFormView ID="form" ParentId="phF_form" TypeFullName="PX.Web.UI.PXFormView">
+            <Children Key="Template" />
+        </PXFormView>
+    </Page>
+    <Page path="~/pages/ar/ar303010.aspx" ControlId="1" pageSource="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">
+        <PXFormView ID="form" ParentId="phF_form" TypeFullName="PX.Web.UI.PXFormView">
+            <Children Key="Template">
+                <AddItem>
+                    <PXTextEdit TypeFullName="PX.Web.UI.PXTextEdit">
+                        <Prop Key="Virtual:ApplyStylesheetSkin" />
+                        <Prop Key="ID" Value="CstPXTextEdit1" />
+                        <Prop Key="DataField" Value="UsrExpirationDate" />
+                    </PXTextEdit>
+                </AddItem>
+                <PXFormView ID="rbtnFrom" OriginalIndex="13" />
+                <PXTextEdit DataField="ExpirationDate" OriginalIndex="12" Remove="True" />
+            </Children>
+        </PXFormView>
+    </Page>
+    <Table TableName="ARRegister">
+        <Column TableName="ARRegister" ColumnName="UsrIsDDPaymentCancel" ColumnType="bool" AllowNull="True" MaxLength="25" DecimalPrecision="2" IsNewColumn="True" IsUnicode="True" />
+    </Table>
+    <File AppRelativePath="Bin\MYOB.PayBy.CCProcessing.dll" Tool3rdParty="False" />
+    <File AppRelativePath="Bin\paycorp-client-csharp(v1.5.0).dll" />
+    <File AppRelativePath="Content\0337.p12" />
+    <File AppRelativePath="Content\paybyAmountHide.css" />
+    <File AppRelativePath="Content\paybyMarginTop.css" />
+    <File AppRelativePath="Content\payby.cer" />
+    <File AppRelativePath="Content\payby_test.cer" />
+    <File AppRelativePath="Frames\PayByConnector.html" />
+    <File AppRelativePath="Pages\PayBy\PB501000.aspx" />
+    <File AppRelativePath="Pages\PayBy\PB501000.aspx.cs" />
+    <SiteMapNode>
+        <data-set>
+            <relations format-version="3" relations-version="20160101" main-table="SiteMap">
+                <link from="MUIScreen (NodeID)" to="SiteMap (NodeID)" />
+                <link from="MUIWorkspace (WorkspaceID)" to="MUIScreen (WorkspaceID)" type="FromMaster" linkname="workspaceToScreen" split-location="yes" updateable="True" />
+                <link from="MUISubcategory (SubcategoryID)" to="MUIScreen (SubcategoryID)" type="FromMaster" updateable="True" />
+                <link from="MUITile (ScreenID)" to="SiteMap (ScreenID)" />
+                <link from="MUIWorkspace (WorkspaceID)" to="MUITile (WorkspaceID)" type="FromMaster" linkname="workspaceToTile" split-location="yes" updateable="True" />
+                <link from="MUIArea (AreaID)" to="MUIWorkspace (AreaID)" type="FromMaster" updateable="True" />
+                <link from="MUIPinnedScreen (NodeID, WorkspaceID)" to="MUIScreen (NodeID, WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+                <link from="MUIFavoriteWorkspace (WorkspaceID)" to="MUIWorkspace (WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+            </relations>
+            <layout>
+                <table name="SiteMap">
+                    <table name="MUIScreen" uplink="(NodeID) = (NodeID)">
+                        <table name="MUIPinnedScreen" uplink="(NodeID, WorkspaceID) = (NodeID, WorkspaceID)" />
+                    </table>
+                    <table name="MUITile" uplink="(ScreenID) = (ScreenID)" />
+                </table>
+                <table name="MUIWorkspace">
+                    <table name="MUIFavoriteWorkspace" uplink="(WorkspaceID) = (WorkspaceID)" />
+                </table>
+                <table name="MUISubcategory" />
+                <table name="MUIArea" />
+            </layout>
+            <data>
+                <SiteMap>
+                    <row Position="710" Title="Direct Debit Processing" Expanded="1" IsFolder="0" NodeID="a9b0ffa0-b4dc-432d-ad8f-504423ee1686" ParentID="d29f82fc-e219-4728-9c6c-c40303c69b4e" />
+                </SiteMap>
+            </data>
+        </data-set>
+    </SiteMapNode>
+    <SiteMapNode>
+        <data-set>
+            <relations format-version="3" relations-version="20160101" main-table="SiteMap">
+                <link from="MUIScreen (NodeID)" to="SiteMap (NodeID)" />
+                <link from="MUIWorkspace (WorkspaceID)" to="MUIScreen (WorkspaceID)" type="FromMaster" linkname="workspaceToScreen" split-location="yes" updateable="True" />
+                <link from="MUISubcategory (SubcategoryID)" to="MUIScreen (SubcategoryID)" type="FromMaster" updateable="True" />
+                <link from="MUITile (ScreenID)" to="SiteMap (ScreenID)" />
+                <link from="MUIWorkspace (WorkspaceID)" to="MUITile (WorkspaceID)" type="FromMaster" linkname="workspaceToTile" split-location="yes" updateable="True" />
+                <link from="MUIArea (AreaID)" to="MUIWorkspace (AreaID)" type="FromMaster" updateable="True" />
+                <link from="MUIPinnedScreen (NodeID, WorkspaceID)" to="MUIScreen (NodeID, WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+                <link from="MUIFavoriteWorkspace (WorkspaceID)" to="MUIWorkspace (WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+            </relations>
+            <layout>
+                <table name="SiteMap">
+                    <table name="MUIScreen" uplink="(NodeID) = (NodeID)">
+                        <table name="MUIPinnedScreen" uplink="(NodeID, WorkspaceID) = (NodeID, WorkspaceID)" />
+                    </table>
+                    <table name="MUITile" uplink="(ScreenID) = (ScreenID)" />
+                </table>
+                <table name="MUIWorkspace">
+                    <table name="MUIFavoriteWorkspace" uplink="(WorkspaceID) = (WorkspaceID)" />
+                </table>
+                <table name="MUISubcategory" />
+                <table name="MUIArea" />
+            </layout>
+            <data>
+                <SiteMap>
+                    <row Position="1" Title="Direct Debit Payment Settlement" Url="~/Pages/PayBy/PB501000.aspx" Expanded="0" IsFolder="0" ScreenID="PB501000" NodeID="bcb40745-ac6d-48f6-b2ee-9a916f781366" ParentID="a9b0ffa0-b4dc-432d-ad8f-504423ee1686">
+                        <MUIScreen IsPortal="0" WorkspaceID="d5cbc4c3-5f8b-40da-80c9-49897f1f74b8" Order="175" SubcategoryID="32130442-2305-4394-9389-cf915b191d2a">
+                            <MUIPinnedScreen IsPortal="0" Username="" IsPinned="1" />
+                        </MUIScreen>
+                    </row>
+                </SiteMap>
+                <MUIWorkspace>
+                    <row IsPortal="0" WorkspaceID="d5cbc4c3-5f8b-40da-80c9-49897f1f74b8" Order="47.5" Title="Receivables" Icon="add_circle" AreaID="338edf81-5456-4735-8601-b213458e93fe" ScreenID="WSAR0000" IsSystem="0">
+                        <MUIFavoriteWorkspace IsPortal="0" Username="" IsFavorite="1" />
+                    </row>
+                </MUIWorkspace>
+                <MUISubcategory>
+                    <row IsPortal="0" SubcategoryID="32130442-2305-4394-9389-cf915b191d2a" Order="820" Name="Processes" Icon="" IsSystem="0" />
+                </MUISubcategory>
+                <MUIArea>
+                    <row IsPortal="0" AreaID="338edf81-5456-4735-8601-b213458e93fe" Order="10" Name="Financials" />
+                </MUIArea>
+            </data>
+        </data-set>
+    </SiteMapNode>
+    <Table TableName="CustomerPaymentMethod">
+        <Column TableName="CustomerPaymentMethod" ColumnName="MAKLExpirationDate" ColumnType="date" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    </Table>
+    <Sql TableName="FixCustomerPaymentMethodExpireDate" CustomScript="#CDATA">
+        <CDATA name="CustomScript"><![CDATA[
+GO
+--[mssql: Skip]
+UPDATE CustomerPaymentMethod
+        INNER JOIN
+    CCProcessingCenter ON CustomerPaymentMethod.CCProcessingCenterID = CCProcessingCenter.ProcessingCenterID 
+SET 
+    ExpirationDate = ADDDATE(ExpirationDate,
+        INTERVAL 1 MONTH)
+WHERE
+    ProcessingTypeName = 'MYOB.PayBy.CCProcessing.V2.PayByProcessingPluginV2';
+
+GO]]></CDATA>
+    </Sql>
+    <Sql TableName="SkipCCExpireDateCheck" CustomScript="#CDATA">
+        <CDATA name="CustomScript"><![CDATA[update CustomerPaymentMethod set MAKLExpirationDate = ExpirationDate;
+update CustomerPaymentMethod set ExpirationDate = null;]]></CDATA>
+    </Sql>
+</Customization>

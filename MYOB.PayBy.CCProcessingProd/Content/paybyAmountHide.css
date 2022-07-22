@@ -1,0 +1,16 @@
+﻿/*.form-group.payment.paymentAmount.has-feedback {
+    display: none;
+}*/
+
+form#paymentForm {
+    padding-left: 12px;
+    padding-top: 12px;
+}
+
+.form-group.payment.cardHolderName{
+    margin-top:20px;
+}
+
+.form-group.payment.paymentAmount {
+    display: none;
+}

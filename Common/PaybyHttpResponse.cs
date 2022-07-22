@@ -6,16 +6,16 @@
 
 namespace MYOB.PayBy.CCProcessing.Common
 {
-  public class PaybyHttpResponse
-  {
-    public object Response { get; set; }
+    public class PaybyHttpResponse
+    {
+        public dynamic Response { get; set; }
 
-    public messageTypeEnum HttpResponseCode { get; set; }
+        public messageTypeEnum HttpResponseCode { get; set; }
 
-    public string Message { get; set; }
+        public string Message { get; set; }
 
-    public bool IsSuccess { get; set; }
+        public bool IsSuccess { get; set; }
 
-    public float Duration { get; set; }
-  }
+        public float Duration { get; set; }
+    }
 }

@@ -1,0 +1,27 @@
+﻿﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+            var p = 'action=successfulSave';// posted;
+            setTimeout(function () {
+                window.parent.px_callback.paymentCallback(p);
+            }, 0);
+        });
+
+       // window.parent.px_callback.paymentCallback('action=successfulSave');
+    </script>
+
+    <!--<script type="text/javascript">
+        window.addEventListener("message", function (event) {
+            alert("received: " + event.data);
+        });
+    </script>-->
+
+</head>
+<body style="height:auto;margin:0px;padding:0px;width:auto">
+    <label><strong>Processing......<br> Close this window if you have Edited/Updated the Card Details... <br /></strong></label>
+</body>
+</html>
